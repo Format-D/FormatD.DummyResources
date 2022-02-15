@@ -1,0 +1,4 @@
+FormatD:
+  DummyResources:
+    enable: false
+    path: '%FLOW_PATH_PACKAGES%Application/FormatD.DummyResources/Resources/Private/Dummy/'

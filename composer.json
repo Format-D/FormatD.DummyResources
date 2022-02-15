@@ -1,0 +1,19 @@
+{
+    "name": "formatd/dummy-resources",
+    "description": "Modifies the default FileSystemStorage to provide dummy files if the physical file for a resource is missing on disk.",
+    "type": "neos-package",
+    "license": "MIT",
+    "require": {
+        "neos/flow": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "FormatD\\DummyResources\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "FormatD.DummyResources"
+        }
+    }
+}
