@@ -1,0 +1,2 @@
+﻿Dummy
+txt dummy resource

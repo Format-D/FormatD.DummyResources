@@ -3,7 +3,7 @@
 
 Dummy Resources for Development Environment.
 
-This package is meant to be used in local development environments there you don't have all the resource files available that your database references.
+This package is meant to be used in local development environments where you don't have all the resource files available that are references in your database.
 If you need to work on a large database locally and cannot (or don't want to) download all the resources, this package is for you.
 
 ## What does it do?
