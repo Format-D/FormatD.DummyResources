@@ -16,6 +16,12 @@ class ResourceFallbackAspect {
 	 */
 	protected $dummyResourcesPath;
 
+    /**
+     * @Flow\InjectConfiguration(package="FormatD.DummyResources", path="fallbackFileExtension")
+     * @var string
+     */
+    protected $fallbackFileExtension;
+
 	/**
 	 * @param \Neos\Flow\Aop\JoinPointInterface $joinPoint
 	 * @Flow\Around("setting(FormatD.DummyResources.enable) && method(Neos\Flow\ResourceManagement\Storage\FileSystemStorage->getStreamByResource(.*))")
@@ -60,12 +66,17 @@ class ResourceFallbackAspect {
 	}
 
 	/**
-	 * @param string $fileExtension
-	 * @return false|resource
-	 */
+	* @param string $fileExtension
+	* @return false|resource
+	*/
 	protected function serveDummyResource($fileExtension, $mode = 'r')
-    {
+	{
 		$pathAndFilename = $this->dummyResourcesPath . 'dummy.' . $fileExtension;
+
+		if(!is_file($pathAndFilename) && $this->fallbackFileExtension) {
+			$pathAndFilename = $this->dummyResourcesPath . 'dummy.' . $this->fallbackFileExtension;
+		}
+
 		return fopen($pathAndFilename, $mode);
 	}
 
