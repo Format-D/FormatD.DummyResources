@@ -25,7 +25,7 @@ Releases und compatibility:
 
 | Package-Version | Neos Flow Version |
 |-----------------|-------------------|
-| 1.0.x           | 7.x               |
+| 1.0.x           | 7.x, 8.x          |
 
 
 ## Installation
